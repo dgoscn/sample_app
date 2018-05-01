@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.0'
-
+############
+gem 'minitest', group: :test
+gem 'minitest-reporters', group: :test
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
@@ -58,6 +60,14 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+group :test do
+  gem 'rails-controller-testing'
+  #gem 'minitest-reporters',       '1.1.14'
+  gem 'guard'
+  #gem 'guard-minitest',           '2.4.4'
+end
+
 group :production do
   gem 'pg'
 end
