@@ -50,6 +50,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get static_pages_home_url
     assert_response :success
+    assert_select "title", "Ruby on Rails Tutorial Sample App"
+
   end
 
   test "should get help" do
@@ -62,5 +64,5 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  
+
 end
